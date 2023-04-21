@@ -1,0 +1,11 @@
+FROM golang:latest
+
+WORKDIR /app
+
+COPY dispatcher.go .
+
+RUN go mod init main
+RUN go build -o /dispatcher
+
+CMD ["/dispatcher"]
+
